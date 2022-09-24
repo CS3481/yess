@@ -8,7 +8,7 @@ OBJ = $(OBJD)/lab4.o $(OBJD)/MemoryTester.o $(OBJD)/Memory.o $(OBJD)/Tools.o \
 $(OBJD)/RegisterFile.o $(OBJD)/RegisterFileTester.o $(OBJD)/ConditionCodes.o \
 $(OBJD)/ConditionCodesTester.o
 
-$(OBJD)/%.o: %.C
+$(OBJD)/%.o: %.C create$(OBJD)
 	$(CC) $(CFLAGS) $< -o $(OBJD)/$@
 
 run:
@@ -37,3 +37,5 @@ clean:
 	rm ../bin/lab4
 	rm $(OBJ)
 
+create$(OBJD):
+	mkdir -p $(OBJD)

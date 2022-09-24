@@ -7,7 +7,7 @@ OBJD = ../obj
 CFLAGS = -g -c -Wall -std=c++11 -I $(INC)
 
 #rule to match .C with object in another directory
-$(OBJD)/%.o: %.C
+$(OBJD)/%.o: %.C create$(OBJD)
 	$(CC) $(CFLAGS) $< -o $(OBJD)/$@
 
 #1) need a macro for the .o files corresponding to the .C 
@@ -17,5 +17,11 @@ $(OBJD)/%.o: %.C
 #   that is dependent upon the .o files 
 #3) need a .o target for each .C
 #4) need a clean target to delete the .o files in the ../obj directory
- 
 
+
+
+ 
+#This rule creates the ../obj directory if it doesn't exist
+#This needs to be at the bottom of the makefile
+create$(OBJD):
+	mkdir -p $(OBJD)
