@@ -20,8 +20,7 @@ compile:
 	make $(BIN)/lab4
 
 $(BIN)/lab4: $(OBJ)
-	$(CC) $(OBJ) -o lab4
-	mv lab4 ../bin
+	$(CC) $(OBJ) -o $(BIN)/lab4
 
 objects: $(OBJ)
 
