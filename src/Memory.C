@@ -31,7 +31,7 @@ Memory * Memory::getInstance()
  * getLong
  * returns the 64-bit word at the indicated address; sets imem_error
  * to false if the access is aligned and the address is within range;
- * otherwise sets imem_error to true
+ * otherwise sets imem_error to true. 
  *
  * @param address of 64-bit word; access must be aligned (address % 8 == 0)
  * @return imem_error is set to true or false
@@ -40,6 +40,7 @@ Memory * Memory::getInstance()
  */
 uint64_t Memory::getLong(int32_t address, bool & imem_error)
 {
+   //See Memory.h to determine the valid indices within the mem array
    return 0;
 }
 
@@ -55,6 +56,7 @@ uint64_t Memory::getLong(int32_t address, bool & imem_error)
  */
 uint8_t Memory::getByte(int32_t address, bool & imem_error)
 {
+   //See Memory.h to determine the valid indices within the mem array
    return 0;
 }
 
@@ -62,8 +64,7 @@ uint8_t Memory::getByte(int32_t address, bool & imem_error)
  * putLong
  * sets the 64-bit word in memory at the indicated address to the
  * value that is provided if the address is aligned and within range
- * and sets imem_error to false; otherwise sets 
- * imem_error to true
+ * and sets imem_error to false; otherwise sets imem_error to true
  *
  * @param 64-bit value to be stored in memory (mem array)
  * @param address of 64-bit word; access must be aligned (address % 8 == 0)
@@ -71,6 +72,7 @@ uint8_t Memory::getByte(int32_t address, bool & imem_error)
  */
 void Memory::putLong(uint64_t value, int32_t address, bool & imem_error)
 {
+   //See Memory.h to determine the valid indices within the mem array
    return;
 }
 
@@ -87,6 +89,7 @@ void Memory::putLong(uint64_t value, int32_t address, bool & imem_error)
 
 void Memory::putByte(uint8_t value, int32_t address, bool & imem_error)
 {
+   //See Memory.h to determine the valid indices within the mem array
    return;
 }
 

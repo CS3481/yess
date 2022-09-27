@@ -17,7 +17,7 @@ RegisterFile::RegisterFile()
 
 /**
  * getInstance
- * if regInstance is NULL then creates a Register object
+ * if regInstance is NULL then creates a RegisterFile object
  * and sets regInstance to point it; returns regInstance
  *
  * @return regInstance, the pointer to the single RegisterFile
@@ -42,6 +42,7 @@ RegisterFile * RegisterFile::getInstance()
 */
 uint64_t RegisterFile::readRegister(int32_t regNumber, bool & error)
 {
+   //see RegisterFile.h to determine valid indices into reg array
    return 0;
 }
 
@@ -57,6 +58,7 @@ uint64_t RegisterFile::readRegister(int32_t regNumber, bool & error)
 void RegisterFile::writeRegister(uint64_t value, int32_t regNumber, 
                                  bool & error)
 {
+   //see RegisterFile.h to determine valid indices into reg array
    return;
 }
 
@@ -66,7 +68,7 @@ void RegisterFile::writeRegister(uint64_t value, int32_t regNumber,
  */
 void RegisterFile::dump()
 {
-   std::string rnames[15] = {"%rax: ", "%rcx: ", "%rdx: ",  "%rbx: ",
+   std::string rnames[REGSIZE] = {"%rax: ", "%rcx: ", "%rdx: ",  "%rbx: ",
                              "%rsp: ", "%rbp: ", "%rsi: ",  "%rdi: ", 
                              "% r8: ", "% r9: ", "%r10: ",  "%r11: ",
                              "%r12: ", "%r13: ", "%r14: "};  

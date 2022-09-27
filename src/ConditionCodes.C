@@ -32,17 +32,18 @@ ConditionCodes * ConditionCodes::getInstance()
 /*
  * getConditionCode
  * accepts a condition code number (OF, SF, or ZF) and returns 
- * the value of the condition code 
+ * the value of the condition code from the codes data member
  *
  * @param ccNum equal to either OF, SF, or ZF
  * @return the value of bit ccNum out of codes. if ccNum is 
- *         out of range then returns false
+ *         out of range (not OF and not SF and not ZF)
+ *         then returns false (0)
  * @return error is set to true if ccNum is out of range and
  *         false otherwise
  */
 bool ConditionCodes::getConditionCode(int32_t ccNum, bool & error)
 {
-   //Use your getBits in Tools.C.
+   //Use your getBits in Tools.C to get the bit out of codes.
    //Don't use "magic" numbers.
    return false;
 }
@@ -50,9 +51,10 @@ bool ConditionCodes::getConditionCode(int32_t ccNum, bool & error)
 /*
  * setConditionCode
  * accepts a condition code number (OF, SF, or ZF) and value
- * (true or false) and sets the condition code bit to that
- * value (1/true or 0/false). if the ccNum value is out of 
- * range then codes does not get modified. 
+ * (true or false) and sets the condition code bit within
+ * the codes data member to that value (1/true or 0/false). 
+ * if the ccNum value is out of range (not OF and not SF and 
+ * not ZF) then codes does not get modified. 
  *
  * @param value to set the condition code bit to (true/1 or false/0)
  * @param ccNum condition code number, either OF, SF, or ZF

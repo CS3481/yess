@@ -13,10 +13,11 @@ $(OBJD)/%.o: %.C create$(OBJD)
 #1) need a macro for the .o files corresponding to the .C 
 #   files in this directory (note they will be stored in the ../obj
 #   directory
-#2) need a target (with a name that doesn't match a file)
+#2) need a target (with a name that doesn't match a file; for example, all:)
 #   that is dependent upon the .o files 
 #3) need a .o target for each .C
-#4) need a clean target to delete the .o files in the ../obj directory
+#4) need a clean target to delete the .o files corresponding to
+#   the .C files in this directory from the ../obj directory
 
 
 
